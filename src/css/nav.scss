@@ -1,0 +1,28 @@
+
+/* .my-navbar {
+    background-color: #2b2b2b;
+} */
+@import 'common';
+
+.my-navbar .navbar-menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 8px 12px;
+    position: fixed;
+    width: 100%;
+    a {
+        font-size: 18px;
+        color: var(--text-color);
+    }
+}
+
+.text-white .nav-item {
+    color: var(--text-color);
+}
+
+/* .page-content {
+    background-color: #2b2b2b;
+}
+ */

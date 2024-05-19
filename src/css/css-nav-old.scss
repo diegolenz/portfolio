@@ -1,0 +1,113 @@
+.text-white .nav-item {
+    color: #06141b;
+}
+
+/* .content-about {
+    padding: 32px
+} */
+
+.page-content {
+    background-color: #1e272b;
+    // position: fixed;
+}
+
+.my-navbar {
+    //background-image: url("./../assets/background.jpg") ;
+    //background: linear-gradient(#06141b, #1e272b);
+    /*  background-color: #06141b;
+    background-position: center;
+    background-size: cover; */
+    position: relative;
+    min-height: 360px;
+    //position: relative;
+
+    img {
+        position: fixed;
+        filter: brightness(50%);
+        height: 65%;
+        width: 100%;
+        //filter: grayscale(100%);
+    }
+}
+
+.my-navbar .navbar-content {
+    position: inherit;
+    width: auto;
+    padding: 32px;
+    span {
+        font-size: 34px;
+        color: white;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 34px;
+        color: #ffe3c4;
+    }
+}
+
+.my-navbar .navbar-menu {
+    position: inherit;
+    padding: 32px;
+    padding-top: 16px;
+    padding-left: 22px;
+    a {
+        font-size: 34px;
+    }
+}
+
+/* .config {
+    margin-right: 2px;
+    margin-left: auto;
+    color: white !important;
+    align-self: self-end;
+    font-size: 42px;
+} */
+
+.button {
+    max-width: 400px;
+    height: 42px;
+    background-color: #541a6e;
+    color: white;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nav-content {
+    font-size: 47px;
+    padding: 24px 42px;
+}
+
+.container-about {
+    /*  position: relative; */
+    background-color: #1e272b;
+    padding: 10px, 82px;
+    align-items: center;
+}
+
+.text-block {
+    position: absolute;
+    bottom: 46px;
+    left: 60px;
+    /* background-color: black; */
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 82px;
+    font-family: sans-serif;
+    font-weight: 500;
+    img {
+        background-color: #06141b;
+        filter: brightness(60%);
+    }
+}
+
+/* .background-about {
+    background-color: #06141b;
+    filter: brightness(50%)
+} */
+
+@media screen and (max-width: 650px) {
+
+}
