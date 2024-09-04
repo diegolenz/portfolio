@@ -2,11 +2,11 @@
 $prymary-color: 0.25rem !default;
 $secondary-color: 0.25rem !default; */
 :root {
-  --text-color: black;
-  --background-color: white;
+  --text-color: #bd0903;
+  --background-color: #16253f;
   --contrast-color: #f8bbd0;
   --contrast-2-color: #e0b2c2;
-  --primary-color: #c11725;
+  --primary-color: #3e4192;
 }
 
 [data-theme="dark"] {
@@ -14,7 +14,7 @@ $secondary-color: 0.25rem !default; */
   --background-color: #101010;
   --contrast-color: #171717;
   --contrast-2-color: #1d1d1d;
-  --primary-color: #c11725;
+  --primary-color: #3e4192;
 }
 /* $dark-theme: true !default;
 $primary-color: #f8bbd0 !default;
@@ -53,4 +53,76 @@ $accent-color: #c11725 !default; */
 .button-default {
   background-color: var(--primary-color);
   color: var(--text-color);
+}
+
+.form {
+}
+
+.card-flutuante {
+  background-color: rgba(255, 255, 255, 0.85); /* Leve transparência */
+  padding: 30px;
+  border-radius: 42px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para o efeito flutuante */
+  width: 100%;
+  margin-right: 92px;
+  max-width: 400px;
+  max-height: 750px;
+  margin-top: 192px;
+  flex: 1;
+  max-width: 70%;
+}
+
+.card-text {
+  padding: 30px;
+  margin-left: 92px;
+  max-width: 400px;
+  max-height: 650px;
+  flex: 1;
+  max-width: 70%;
+}
+
+.titulo {
+  font-size: 4em; /* Aumenta o tamanho do texto */
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: #3f9c42;
+  /* background: -webkit-linear-gradient(#ff0080, #ff8c00);  *//* Gradiente com cores mais fortes */
+  -webkit-background-clip: text;
+/*   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); */ /* Sombra mais forte */
+}
+
+.btn-primary {
+  background-color: #3f9c42;
+}
+
+/* Estilo para o subtítulo */
+.subtitulo {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: #4CAF50;
+  /* background: -webkit-linear-gradient(#fff, #00ff00);  *//* Gradiente de cor de fundo para o texto */
+  -webkit-background-clip: text;
+ /*  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */ /* Sombra do texto */
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.whatsapp-btn i {
+  margin-right: 8px;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1EBE5B;
+  text-decoration: none;
+  color: white;
 }

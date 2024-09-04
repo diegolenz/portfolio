@@ -4,13 +4,12 @@ import Logo from '../../assets/icone.png'
 import background from '../../assets/background.jpg'
 import '../../css/nav.scss';
 import { BsListTask } from 'react-icons/bs'
+import logoMnu from './../../assets/logo-sem-fundo.png'
 
 
 
 function handleSubmit(e) {
     e.preventDefault();
-    console.log('a')
-    console.log(e)
     if (e?.target?.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
@@ -31,15 +30,15 @@ function handleSubmit(e) {
 function Nav() {
     const toggleSwitch = document.getElementById('theme-switch');
     const currentTheme = localStorage.getItem('theme');
-    
+
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
     }
     const [darkCheck, setChecked] = React.useState(currentTheme === 'dark');
-    
+
     const handleChange = () => {
-        
-        let theme = darkCheck? 'light' : 'dark'
+
+        let theme = darkCheck ? 'light' : 'dark'
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
         setChecked(!darkCheck);
@@ -50,15 +49,18 @@ function Nav() {
             <div className="my-navbar" >
 
                 <div className="navbar-menu">
-                    <a aria-current="page" className="nav-item nav-link active" href="/products">Home</a>
-                    <a aria-current="page" className="nav-item nav-link active" href="/products">Sobre mim</a>
-                    <a aria-current="page" className="nav-item nav-link active" href="/products">Entre em contato</a>
+                   {/*  <a class="navbar-brand" href="#">
+                        <img src={logoMnu} alt="Logo" width="100" height="50" className="d-inline-block align-text-top" />
+                    </a> */}
+                    <a aria-current="page" className="nav-item nav-link active menu-item " href="/products">Home</a>
+                    <a aria-current="page" className="nav-item nav-link active menu-item " href="/products">Sobre mim</a>
+                    <a aria-current="page" className="nav-item nav-link active menu-item " href="/products">Entre em contato</a>
 
 
-                    <label>
-                        <input id="theme-switch"
+                    <label className="nav-item nav-link active menu-item ">
+                        <input id="theme-switch "
                             type="checkbox"
-                            checked={darkCheck} 
+                            checked={darkCheck}
                             onChange={handleChange}
                         />
                         Light/Dark

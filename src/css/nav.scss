@@ -11,12 +11,23 @@
     background-color: var(--background-color);
     padding: 8px 12px;
     position: fixed;
+    z-index: 10;
     width: 100%;
-    a {
-        font-size: 18px;
-        color: var(--text-color);
-    }
 }
+
+.menu-item {
+   /*  color: white; */
+   color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  .menu-item:hover {
+    color: #4CAF50; /* Cor que transmite sustentabilidade */
+  }
+
 
 .text-white .nav-item {
     color: var(--text-color);
