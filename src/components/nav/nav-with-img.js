@@ -12,9 +12,9 @@ function Nav() {
             <div className="my-navbar" >
                 <img src={background} alt="" />
                 <div className="navbar-menu row">
-                    <a aria-current="page" class="text-white nav-item nav-link active" href="/products">Home</a>
-                    <a aria-current="page" class="text-white nav-item nav-link active" href="/products">About</a>
-                    <a aria-current="page" class="text-white nav-item nav-link active" href="/products">Contact</a>
+                    <a aria-current="page" className="text-white nav-item nav-link active" href="/products">Home</a>
+                    <a aria-current="page" className="text-white nav-item nav-link active" href="/products">About</a>
+                    <a aria-current="page" className="text-white nav-item nav-link active" href="/products">Contact</a>
                     <a className="config">
                         <BsListTask />
                     </a>

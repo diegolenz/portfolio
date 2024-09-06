@@ -14,16 +14,12 @@ class Home extends Component {
 
     render() {
         return (
-            <section /* className="about-me" */ >
+            <div className="home" >
 
                 {/*  <div className="photo">
                     <img src={perfil} alt="" />
                 </div> */}
-
-
-
-                {/* <td id="rightImage" class="animated jackInTheBox" style="animation-delay:2.2s;"></td> */}
-                <div id="rightImage" className="animated jackInTheBox" /* style={animationDelay= 2.2 + 's'} */ className="introduction">
+             {/*    <div id="rightImage" className="animated jackInTheBox introduction" /> */}
                     <table id="top_part" className="pag">
                         <thead />
                         <tbody>
@@ -35,8 +31,6 @@ class Home extends Component {
                                                 <img src={logoMnu} alt="Logo" width="430" height="262" className="d-inline-block align-text-top" />
                                             </a>
                                         </div>
-
-                                        {/*   <h1 class="titulo">Lenz Solar</h1> */}
                                         <h2 className="subtitulo">Iluminando o futuro com energia sustentável e limpa.</h2>
                                         <h2 className="subtitulo">Fale com um dos nossos vendedores atravez do WhatsApp</h2>
                                         <div className="form-group">
@@ -64,8 +58,8 @@ class Home extends Component {
                     <p className='text'>Seja bem vindo ao meu portifólio</p>
                     <button className='button button-default'>Baixar Curriculo</button> */}
                     {/* <button className='button'>Veja mais sobre meu projeto</button> */}
-                </div>
-            </section>
+                {/* </div> */}
+            </div>
         )
     }
 }

@@ -49,7 +49,7 @@ function Nav() {
             <div className="my-navbar" >
 
                 <div className="navbar-menu">
-                   {/*  <a class="navbar-brand" href="#">
+                   {/*  <a className="navbar-brand" href="#">
                         <img src={logoMnu} alt="Logo" width="100" height="50" className="d-inline-block align-text-top" />
                     </a> */}
                     <a aria-current="page" className="nav-item nav-link active menu-item " href="/products">Home</a>

@@ -1,134 +1,85 @@
-import React, { Component } from 'react'
-import background from '../assets/background.jpg'
+import React, { useRef, useState, useEffect } from 'react';
 import '../css/experience.scss'
-//import perfil from '../../assets/perfil.jpeg'
-import perfil from '../assets/perfil-nb.png'
-import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 
-class Experience extends Component {
+const products = [
+    { id: 1, name: 'Produto 1', price: '$10', image: 'https://via.placeholder.com/150' },
+    { id: 2, name: 'Produto 2', price: '$20', image: 'https://via.placeholder.com/150' },
+    { id: 3, name: 'Produto 3', price: '$30', image: 'https://via.placeholder.com/150' },
+    { id: 4, name: 'Produto 4', price: '$40', image: 'https://via.placeholder.com/150' },
+    { id: 5, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
+    { id: 6, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
+    { id: 7, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
+    { id: 8, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
+    { id: 9, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
+    { id: 10, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
+    // Adicione mais produtos se necessário
+];
 
-    constructor() {
-        super();
-        const experiences = [
-            {
-                function: 'desenvolvedor JAVA',
-                company: 'JL informatica',
-                text: 'Soluções ERPS para clubes'
-            },
-            {
-                function: 'desenvolvedor JAVA 2',
-                company: 'JL informatica',
-                text: 'Soluções ERPS para clubes'
-            },
-            {
-                function: 'desenvolvedor JAVA 3',
-                company: 'JL informatica',
-                text: 'Soluções ERPS para clubes'
-            },
-            {
-                function: 'desenvolvedor JAVA 5',
-                company: 'JL informatica',
-                text: 'Soluções ERPS para clubes'
-            },
-            {
-                function: 'desenvolvedor FrontEND',
-                company: 'FOTON',
-                text: 'Desenvolimenor de HOST de micro front End para aclopar diferentes sistemas CAIXA'
-            }
-        ]
-        this.state = {
-            experiences: experiences,
-            currentIndex: 0,
-            sliderEle: null,
-            innerEle: null
+
+function Experience() {
+    const scrollContainerRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(2); // Começa com o terceiro cartão
+
+    const scroll = (direction) => {
+        const container = scrollContainerRef.current;
+        if (direction === 'left') {
+            container.scrollBy({ left: -300, behavior: 'smooth' });
+        } else {
+            container.scrollBy({ left: 300, behavior: 'smooth' });
         }
-        this.rightScroll = this.rightScroll.bind(this);
-        this.leftScroll = this.leftScroll.bind(this);
-        console.log('init')
-        /*     const totItens = experiences.length;*/
-    }
-
-    componentDidMount(prevProps) {
-        // Typical usage (don't forget to compare props):
-        console.log('compdid')
-        const sliderEle = document.getElementById('slider');
-        this.setState({
-            sliderEle: sliderEle,
-            innerEle: sliderEle.querySelector('.slider__inner')
-        });
-       
-    }
-
-
-    rightScroll(e) {
-        e.preventDefault();
-        console.log('rightScroll')
-        console.log(this.state);
-        if (this.state.currentIndex < this.state.experiences.length - 1) {
-            this.jump(this.state.currentIndex + 1);
-        }
-    }
-
-    leftScroll(e) {
-        e.preventDefault();
-        console.log('leftScroll')
-        console.log(this.state)
-        if (this.state.currentIndex > 0) {
-            this.jump(this.state.currentIndex - 1);
-        }
-    }
-
-    /* jump(index) {
-        this.innerEle.style.transform = `translateX(${-100 * index}%)`;
-    } */
-
-    jump = (index) => {
-        console.log('jump')
-        console.log( this.state.innerEle)
-        if (this.state.innerEle && this.state.innerEle.style)
-            this.state.innerEle.style.transform = `translateX(${-100 * index}%)`;
     };
 
-    /*  const jump = (index) => {
-         innerEle.style.transform = `translateX(${-100 * index}%)`;
-     }; */
+    useEffect(() => {
+        const container = scrollContainerRef.current;
+        const handleScroll = () => {
+            const center = container.scrollLeft + container.offsetWidth / 2;
+            const cardElements = container.querySelectorAll('.card');
+            let closestIndex = 0;
+            let minDistance = Infinity;
 
+            cardElements.forEach((card, index) => {
+                const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+                const distance = Math.abs(cardCenter - center);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestIndex = index;
+                }
+            });
 
-    render() {
-        return (
-            <section className="projects slider" id="slider">
-                {/* <div className="box-effect" /> */}
-                <button className="button btn-left" onClick={this.leftScroll}>
-                    <AiFillCaretLeft />
+            setActiveIndex(closestIndex);
+        };
+
+        container.addEventListener('scroll', handleScroll);
+        return () => container.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    return (
+        <div className="app">
+            <h1>Produtos</h1>
+            <div className="scroll-container">
+                <button className="scroll-button left" onClick={() => scroll('left')}>
+                    <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
-                <div className='slider__inner'>
-                    <div className="card card1">
-
-                    </div>
-                    <div className="card card2">
-                        <a>a</a>
-                        <a>a</a>
-
-                    </div>
-                    <div className="card card3">
-
-                    </div>
-
-                    {/* {this.state.experiences.map((exp, i) => (
-                        <div className="card">
-                            <a>{exp.function}</a>
-                            <a>{exp.company}</a>
-
+                <div ref={scrollContainerRef} className="card-container">
+                    {products.map((product, index) => (
+                        <div
+                            key={product.id}
+                            className={`card ${index === activeIndex ? 'active' : ''}`}
+                        >
+                            <img src={product.image} alt={product.name} />
+                            <h2>{product.name}</h2>
+                            <p>{product.price}</p>
                         </div>
-                    ))} */}
+                    ))}
                 </div>
-                <button className="button btn-right" onClick={this.rightScroll}>
-                    <AiFillCaretRight />
+                <button className="scroll-button right" onClick={() => scroll('right')}>
+                    <FontAwesomeIcon icon={faChevronRight} />
                 </button>
-
-            </section>
-        )
-    }
+            </div>
+        </div>
+    );
 }
 export default Experience;

@@ -23,7 +23,7 @@ const Form = () => {
     };
 
     async function sendEmail(name, email, subject, message) {
-        const myHeaders = new Headers();
+   /*      const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.set('Authorization', 'Basic ' + btoa('<API Key>'+":" +'<Secret Key>'));
       
@@ -45,16 +45,16 @@ const Form = () => {
         fetch("https://api.mailjet.com/v3.1/send", requestOptions)
           .then(response => response.text())
           .then(result => console.log(result))
-          .catch(error => console.log('error', error));
+          .catch(error => console.log('error', error)); */
       
       }
       
       // define your own email api which points to your server.
-      app.post('/api/sendemail/', function (req, res) {
+     /*  app.post('/api/sendemail/', function (req, res) {
         const {name, email, subject, message} = req.body;
         //implement your spam protection or checks.
         sendEmail(name, email, subject, message);
-      });
+      }); */
 
 
     return (
@@ -68,7 +68,7 @@ const Form = () => {
                         <div className="input-group-prepend">
                             <span className="input-group-text fa fa-user"> <i className=""></i> </span>
                         </div>
-                        <input name="" className="form-control" name='nomeCompleto' onChange={handleChange} placeholder="Nome completo" type="text" />
+                        <input  className="form-control" name='nomeCompleto' onChange={handleChange} placeholder="Nome completo" type="text" />
                     </div>
                 </div>
 
@@ -78,7 +78,7 @@ const Form = () => {
                         <div className="input-group-prepend">
                             <span className="input-group-text"> <i className="fa fa-envelope"></i> </span>
                         </div>
-                        <input name="" className="form-control" name='email' onChange={handleChange} placeholder="Email" type="email" />
+                        <input className="form-control" name='email' onChange={handleChange} placeholder="Email" type="email" />
                     </div>
                 </div>
 
@@ -91,7 +91,7 @@ const Form = () => {
                         {/*   <select value='55'  className="custom-select" defaultValue={'55'} style={{ maxWidth: 120 + 'px' }} >
                             <option value='55' selected="">+55</option>
                         </select> */}
-                        <input name="" className="form-control" name='celular' onChange={handleChange} placeholder="045 999 999999" type="text" />
+                        <input className="form-control" name='celular' onChange={handleChange} placeholder="045 999 999999" type="text" />
                     </div>
                 </div>
 
@@ -114,8 +114,8 @@ const Form = () => {
                     </div>
                 </div>
 
-                <button type="submit" class=" sustainability-btn w-100">
-                    <i class="fas fa-leaf"></i>
+                <button type="submit" className=" sustainability-btn w-100">
+                    <i className="fas fa-leaf"></i>
                     Simular
                 </button>
                 {/*   <button  className="btn btn-primary btn-block"> Simular </button> */}
