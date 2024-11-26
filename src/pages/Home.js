@@ -4,6 +4,8 @@ import '../css/home.scss'
 import perfil from '../assets/perfil-nb.png'
 import Form from '../pages/form.js'
 import logoMnu from './../assets/logo-sem-fundo.png'
+import Footer from '../components/footer/Footer'
+import EconomySection from '../components/apresentation/apresentation'
 
 
 class Home extends Component {
@@ -20,16 +22,18 @@ class Home extends Component {
                     <img src={perfil} alt="" />
                 </div> */}
              {/*    <div id="rightImage" className="animated jackInTheBox introduction" /> */}
-                    <table id="top_part" className="pag">
+             <div className='container my-5 d-flex justify-content-center'>
+                
+                                    <Form />
+                                </div>
+                   {/*  <table id="top_part" className="pag">
                         <thead />
                         <tbody>
                             <tr>
                                 <td style={{ width: 65 + '%' }}>
                                     <div className='card-text'>
                                         <div className='row'>
-                                            <a className="navbar-brand" href="#">
-                                                <img src={logoMnu} alt="Logo" width="430" height="262" className="d-inline-block align-text-top" />
-                                            </a>
+                                          
                                         </div>
                                         <h2 className="subtitulo">Iluminando o futuro com energia sustentável e limpa.</h2>
                                         <h2 className="subtitulo">Fale com um dos nossos vendedores atravez do WhatsApp</h2>
@@ -38,7 +42,6 @@ class Home extends Component {
                                                 <i className="fab fa-whatsapp"></i>
                                                 Contate-nos no WhatsApp
                                             </a>
-                                            {/* <button type="submit" className="btn btn-primary btn-block"> WhatsApp </button> */}
                                         </div>
                                     </div>
                                 </td>
@@ -49,7 +52,7 @@ class Home extends Component {
                             </tr>
 
                         </tbody>
-                    </table>
+                    </table> */}
 
 
 
@@ -59,6 +62,7 @@ class Home extends Component {
                     <button className='button button-default'>Baixar Curriculo</button> */}
                     {/* <button className='button'>Veja mais sobre meu projeto</button> */}
                 {/* </div> */}
+                
             </div>
         )
     }

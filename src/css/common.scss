@@ -2,11 +2,11 @@
 $prymary-color: 0.25rem !default;
 $secondary-color: 0.25rem !default; */
 :root {
-  --text-color: #bd0903;
-  --background-color: #16253f;
+  --text-color: #171717;
+  --background-color: #ffffff;
   --contrast-color: #f8bbd0;
   --contrast-2-color: #e0b2c2;
-  --primary-color: #3e4192;
+  --primary-color: #171717;
 }
 
 [data-theme="dark"] {
@@ -55,21 +55,19 @@ $accent-color: #c11725 !default; */
   color: var(--text-color);
 }
 
-.form {
-}
-
 .card-flutuante {
-  background-color: rgba(255, 255, 255, 0.85); /* Leve transparência */
+  /* background-color: rgba(255, 255, 255, 0.85);  *//* Leve transparência */
+  background-color: rgba(255, 255, 255, 255); /* Leve transparência */
   padding: 30px;
   border-radius: 42px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para o efeito flutuante */
   width: 100%;
-  margin-right: 92px;
+  margin-right: 14px;
   max-width: 400px;
   max-height: 750px;
-  margin-top: 192px;
+  margin-top: 112px;
   flex: 1;
-  max-width: 70%;
+/*   max-width: 70%; */
 }
 
 .card-text {
@@ -81,16 +79,25 @@ $accent-color: #c11725 !default; */
   max-width: 70%;
 }
 
-.titulo {
+.green-titulo {
   font-size: 4em; /* Aumenta o tamanho do texto */
   font-weight: bold;
   margin: 0;
   padding: 0;
   color: #3f9c42;
-  /* background: -webkit-linear-gradient(#ff0080, #ff8c00);  *//* Gradiente com cores mais fortes */
   -webkit-background-clip: text;
-/*   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); */ /* Sombra mais forte */
 }
+
+
+.titulo {
+  font-size: 4em; /* Aumenta o tamanho do texto */
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: var(--background-color);
+  -webkit-background-clip: text;
+}
+
 
 .btn-primary {
   background-color: #3f9c42;
@@ -125,4 +132,8 @@ $accent-color: #c11725 !default; */
   background-color: #1EBE5B;
   text-decoration: none;
   color: white;
+}
+
+.titulo-form {
+  color: var(--primary-color);
 }

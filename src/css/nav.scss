@@ -1,39 +1,96 @@
+@import "common";
 
-/* .my-navbar {
-    background-color: #2b2b2b;
-} */
-@import 'common';
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
 
-.my-navbar .navbar-menu {
+.navbar-icon img {
+  height: 84px;
+  width: auto;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.navbar-menu li {
+  margin: 0 15px;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+
+.menu-toggle {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 2px 4px;
+  }
+
+ 
+  .menu-toggle {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    background-color: var(--background-color);
-    padding: 8px 12px;
-    position: fixed;
-    z-index: 10;
+    cursor: pointer;
+  }
+
+  .menu-icon {
+    font-size: 30px;
+    display: inline-block;
+  }
+
+  .close-icon {
+    font-size: 30px;
+    display: none;
+  }
+
+  /* Esconde o menu por padrão e o mostra ao clicar */
+  .navbar-menu {
+    display: none; /* Esconde o menu */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
     width: 100%;
-}
-
-.menu-item {
-   /*  color: white; */
-   color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 18px;
-    transition: color 0.3s ease;
+    background-color: var(--background-color);;
   }
 
-  .menu-item:hover {
-    color: #4CAF50; /* Cor que transmite sustentabilidade */
+  .navbar-menu li {
+    margin: 10px 0;
+    text-align: center;
   }
 
+  /* Quando o menu estiver ativo */
+  .navbar-menu-active {
+    display: flex; 
+  }
+  /* Quando o menu estiver ativo */
+  .navbar-menu-inactive {
+    display: none; 
+  }
 
-.text-white .nav-item {
-    color: var(--text-color);
-}
+  .menu-active .menu-icon {
+    display: none; /* Esconde o ícone de hambúrguer */
+  }
 
-/* .page-content {
-    background-color: #2b2b2b;
+  .menu-active .close-icon {
+    display: inline-block; /* Mostra o ícone de fechar */
+  }
 }
- */

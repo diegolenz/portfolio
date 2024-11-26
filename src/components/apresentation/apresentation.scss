@@ -1,0 +1,55 @@
+/* Container */
+.economy-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    height: 300px; /* Ajuste conforme necessário */
+    overflow: hidden;
+  }
+  
+  /* Título */
+  .economy-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 26px;
+    color: #000;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(50px); /* Começa fora da tela */
+    animation: slideUp 1s ease-out forwards;
+  }
+  
+  /* Texto */
+  .economy-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #555; /* Preto fraco */
+    margin-top: 20px;
+    opacity: 0; /* Invisível no início */
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  /* Destaque */
+  .highlight {
+    font-size: 14px;
+    color: orange;
+    font-weight: bold;
+  }
+  
+  /* Animação para o título */
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Volta à posição inicial */
+    }
+  }
+  
+  /* Animação para o texto */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  

@@ -58,8 +58,8 @@ const Form = () => {
 
 
     return (
-        <section className="form card-flutuante formulario">
-            <h1 >Faça sua simulação de forma gratuita</h1>
+        <section className=" card-flutuante">
+            <h1 className="titulo-form">Simulação gratuita</h1>
             <form onSubmit={handleSubmit} >
                 <div className="row">
                     <label>Nome Completo</label>

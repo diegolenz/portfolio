@@ -5,37 +5,44 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 
 const products = [
-    { id: 1, name: 'Produto 1', price: '$10', image: 'https://via.placeholder.com/150' },
-    { id: 2, name: 'Produto 2', price: '$20', image: 'https://via.placeholder.com/150' },
-    { id: 3, name: 'Produto 3', price: '$30', image: 'https://via.placeholder.com/150' },
-    { id: 4, name: 'Produto 4', price: '$40', image: 'https://via.placeholder.com/150' },
-    { id: 5, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
-    { id: 6, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
-    { id: 7, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
-    { id: 8, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
-    { id: 9, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
-    { id: 10, name: 'Produto 5', price: '$50', image: 'https://via.placeholder.com/150' },
+    { id: 1, name: 'Referencias', description: 'Comprar energia renovável traz diversos benefícios, incluindo a redução das emissões de carbono, ajudando a combater as mudanças climáticas.', image: 'wallpaper-black.png' },
+    { id: 2, name: 'Experiencia', description: 'Comprar energia renovável traz diversos benefícios, incluindo a redução das emissões de carbono, ajudando a combater as mudanças climáticas.', image: 'wallpaper.png' },
+    { id: 3, name: 'Beneficios', description: 'Comprar energia renovável traz diversos benefícios, incluindo a redução das emissões de carbono, ajudando a combater as mudanças climáticas. ', image: 'invista-futuro01.png' },
+    //{ id: 3, name: 'Beneficios', description: 'Comprar energia renovável traz diversos benefícios, incluindo a redução das emissões de carbono, ajudando a combater as mudanças climáticas. Além disso, a energia renovável tende a ser mais econômica a longo prazo, devido à estabilidade de preços e menores custos operacionais.', image: 'invista-futuro01.png' },
     // Adicione mais produtos se necessário
 ];
 
 
 function Experience() {
     const scrollContainerRef = useRef(null);
-    const [activeIndex, setActiveIndex] = useState(2); // Começa com o terceiro cartão
+    const [activeIndex, setActiveIndex] = useState(0); // Começa com o terceiro cartão
 
     const scroll = (direction) => {
         const container = scrollContainerRef.current;
         if (direction === 'left') {
-            container.scrollBy({ left: -300, behavior: 'smooth' });
+           // container.scrollBy({ left: -300, behavior: 'smooth' });
+            setActiveIndex(activeIndex == 0 ? products.length-1: activeIndex-1)
         } else {
-            container.scrollBy({ left: 300, behavior: 'smooth' });
+            //container.scrollBy({ left: 300, behavior: 'smooth' });
+            setActiveIndex(activeIndex == products.length-1 ? 0 : activeIndex+1)
         }
+    };
+
+    const select = (index) => {
+        setActiveIndex(index);
+    }
+
+    const centralizarCard = (index) => {
+        const cardWidth = scrollContainerRef.current.offsetWidth / 3; // Tamanho do card dividido por 3 para melhor ajuste
+        const scrollLeft = cardWidth * index - (scrollContainerRef.current.offsetWidth / 2) + (cardWidth / 2);
+        scrollContainerRef.current.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+        setActiveIndex(index);
     };
 
     useEffect(() => {
         const container = scrollContainerRef.current;
         const handleScroll = () => {
-            const center = container.scrollLeft + container.offsetWidth / 2;
+        /*     const center = container.scrollLeft + container.offsetWidth / 2;
             const cardElements = container.querySelectorAll('.card');
             let closestIndex = 0;
             let minDistance = Infinity;
@@ -49,8 +56,12 @@ function Experience() {
                 }
             });
 
-            setActiveIndex(closestIndex);
+//            setActiveIndex(activeIndex);
+            setActiveIndex(closestIndex); */
         };
+
+        // Função para mover o card clicado para o centro
+       
 
         container.addEventListener('scroll', handleScroll);
         return () => container.removeEventListener('scroll', handleScroll);
@@ -66,12 +77,19 @@ function Experience() {
                 <div ref={scrollContainerRef} className="card-container">
                     {products.map((product, index) => (
                         <div
+                            onClick={() => centralizarCard(index)}
                             key={product.id}
                             className={`card ${index === activeIndex ? 'active' : ''}`}
+                            id={`card${product.id}`}
                         >
-                            <img src={product.image} alt={product.name} />
-                            <h2>{product.name}</h2>
-                            <p>{product.price}</p>
+                            {/*  <img src={require(`./../assets/${product.image}`)} alt={product.name} /> */}
+                            <img src={`/assets/${product.image}`} alt={product.name} />
+                            <h2 className="titulo">{product.name}</h2>
+                            {index == activeIndex  &&  <p>{product.description}</p>}
+                          {/*   { index == activeIndex ?  => (
+                                <p>{product.description}</p>
+                                : null )
+                            }  */}
                         </div>
                     ))}
                 </div>
