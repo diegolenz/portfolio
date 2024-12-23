@@ -76,7 +76,7 @@
     background:
         //linear-gradient(to left, rgba(255, 255, 255, 0) 0%,  rgb(255, 255, 255) 55%),
         /* linear-gradient(to left, rgba(255, 255, 255, 0),  #16253f 75%),  */
-        /*   linear-gradient(to left, rgba(255, 255, 255, 0) 0%,  #16253f 55%), */ url("../assets/wallpaper-01.png")
+        /*   linear-gradient(to left, rgba(255, 255, 255, 0) 0%,  #16253f 55%), */ url("../assets/header.png")
         center center;
     /*  background-size: cover;
     background-repeat: no-repeat;
@@ -90,7 +90,7 @@
     transform: scale(1.1); */
 
     width: 100%;
-    height: 100vh;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,6 +98,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal */
     /* transform: scale(1.1); */
 }
 
@@ -201,4 +203,40 @@
     /* Cor mais escura ao passar o mouse */
     text-decoration: none;
     color: white;
+}
+
+.home-card {
+    position: relative; /* Para permitir deslocamento sem sobreposição */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 20%; /* Cada card ocupa 20% da largura */
+    min-width: 200px; /* Tamanho mínimo */
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateY(-50px); /* Move os cards para fora do contêiner */
+}
+
+.home-card-container {
+    position: relative; /* Base para os cards ficarem relativos ao contêiner */
+    height: 400px; /* Altura do fundo principal */
+    background: rgba(0, 0, 0, 0.1); /* Um fundo claro para destacar os cards */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card-container {
+    //display: flex;
+    //flex-wrap: wrap; /* Permite os cards quebrarem para novas linhas */
+    //justify-content: center; /* Centraliza os cards */
+    //align-items: flex-start;
+    //padding: 2rem;
+    //gap: 1.5rem; /* Espaçamento entre os cards */
+    //
+    max-width: 100%;
 }

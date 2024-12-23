@@ -52,52 +52,23 @@ function Nav() {
     };
 
     return (
-        <nav className="navbar">
+        <nav className="navbar-absolute">
 
             <div className="menu-toggle" onClick={toggleMenu}>
-                <span className="menu-icon">&#9776;</span> 
-                <span className="close-icon">&times;</span> 
+                <span className="menu-icon">&#9776;</span>
+                <span className="close-icon">&times;</span>
             </div>
 
-            {/*  <a className="navbar-brand" href="#">
-                        <img src={logoMnu} alt="Logo" width="100" height="50" className="d-inline-block align-text-top" />
-                    </a> */}
-            {/*   <ul className="navbar-menu left-menu">
-                <li>   <a aria-current="page" className="nav-item nav-link active menu-item " href="/products">Home</a></li>
-                <li> <a aria-current="page" className="nav-item nav-link active menu-item " href="/products">Sobre</a></li>
-            </ul> */}
-
-            <div className="navbar-icon">
-                <a className="navbar-brand" href="#">
-                    <img src={logoMnu} alt="Logo" className="d-inline-block align-text-top" />
-                </a>
-            </div>
-
-            {/*  <ul className="navbar-menu right-menu">
-                <li> <a aria-current="page" className="nav-item nav-link active menu-item " href="/products">Entre em contato</a></li>
-                <li>
-                    <label className="nav-item nav-link active menu-item ">
-                        <input id="theme-switch "
-                            type="checkbox"
-                            checked={darkCheck}
-                            onChange={handleChange}
-                        />
-                        Light/Dark
-                    </label>
-                </li>
-            </ul> */}
 
             <ul className={`navbar-menu ${menuAtivo ? 'navbar-menu-active' : 'navbar-menu-inactive'}`}>
                 <li>   <a href="/products">Inicio</a></li>
-                <li> <a   href="/products">Sobre</a></li>
+                <li> <a href="/products">Sobre</a></li>
+                <div className="navbar-icon">
+                    <a className="navbar-brand" href="#">
+                        <img src={logoMnu} alt="Logo" className="d-inline-block align-text-top" />
+                    </a>
+                </div>
             </ul>
-
-
-
-
-            {/* <a className="config">
-                        <BsListTask />
-                    </a> */}
         </nav>
     );
 }

@@ -6,14 +6,6 @@ import { CiLocationOn } from "react-icons/ci";
 class Footer extends Component {
   render() {
     return (
-      /*  <footer className="page-footer blue "> 
- 
-     <div className=" text-center ">© 2020 Copyright:
-         <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-     </div>
- 
- </footer> */
-
       <footer className="bg-dark text-light py-4">
         <div className="container">
           {/* Nome do site */}

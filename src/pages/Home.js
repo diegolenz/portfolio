@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import background from '../assets/background.jpg'
-import '../css/home.scss'
+import '../css/home-page.scss'
 import perfil from '../assets/perfil-nb.png'
 import Form from '../pages/form.js'
 import logoMnu from './../assets/logo-sem-fundo.png'
 import Footer from '../components/footer/Footer'
 import EconomySection from '../components/apresentation/apresentation'
+import Nav from '../components/nav/Nav'
+import { BiBarChartAlt } from "react-icons/bi";
+import { FaHandshake } from "react-icons/fa6";
+import { GiReceiveMoney } from "react-icons/gi";
 
 
 class Home extends Component {
@@ -16,54 +20,52 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="home" >
+            <div class="background">
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#">Orçamento</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="cards-container">
+                    {/* <div class="card">Card 1</div>
+                    <div class="card">Card 2</div>
+                    <div class="card">Card 3</div> */}
+                    <div className="home-card" style={{ width: "18rem" }}>
+                        <div className="home-card-header">
+                            <GiReceiveMoney />
+                        </div>
 
-                {/*  <div className="photo">
-                    <img src={perfil} alt="" />
-                </div> */}
-             {/*    <div id="rightImage" className="animated jackInTheBox introduction" /> */}
-             <div className='container my-5 d-flex justify-content-center'>
-                
-                                    <Form />
-                                </div>
-                   {/*  <table id="top_part" className="pag">
-                        <thead />
-                        <tbody>
-                            <tr>
-                                <td style={{ width: 65 + '%' }}>
-                                    <div className='card-text'>
-                                        <div className='row'>
-                                          
-                                        </div>
-                                        <h2 className="subtitulo">Iluminando o futuro com energia sustentável e limpa.</h2>
-                                        <h2 className="subtitulo">Fale com um dos nossos vendedores atravez do WhatsApp</h2>
-                                        <div className="form-group">
-                                            <a href="https://wa.me/5545998273844" className="whatsapp-btn">
-                                                <i className="fab fa-whatsapp"></i>
-                                                Contate-nos no WhatsApp
-                                            </a>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td className='aling-right'>
-                                    <Form />
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table> */}
+                        <div className="card-body">
+                            <h5 className="card-title">Ecônomia</h5>
+                            <p className="card-text"> Você ecõnomiza e prioriza o que realmente é importante</p>
+                        </div>
+                    </div>
 
 
+                    <div className="home-card" style={{ width: "18rem" }}>
+                        <div className="card-header">
+                            <BiBarChartAlt />
+                        </div>
+                        <div className="home-card-body">
+                            <h5 className="card-title">sustentável</h5>
+                            <p className="card-text">Energia limpa e renovável</p>
 
-                    {/*    <span className='title'>Olá, eu sou Diego</span>
-                    <p className='subtitle'>Desenvolvedor de software</p>
-                    <p className='text'>Seja bem vindo ao meu portifólio</p>
-                    <button className='button button-default'>Baixar Curriculo</button> */}
-                    {/* <button className='button'>Veja mais sobre meu projeto</button> */}
-                {/* </div> */}
-                
+                        </div>
+                    </div>
+                    <div className="home-card" style={{ width: "18rem" }}>
+                        <div className="home-card-header">
+                            <FaHandshake />
+                        </div>
+                        <div className="home-card-body">
+                            <h5 className="card-title">Confiável</h5>
+                            <p className="card-text">Mais de 3 anos e 2000 clientes satisfeitos</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         )
     }
 }

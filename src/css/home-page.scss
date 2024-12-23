@@ -1,0 +1,106 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Plano de fundo */
+.background {
+    position: relative;
+    height: 350px; /* Altura do background */
+    background: linear-gradient(to bottom, #4facfe, #00f2fe); /* Gradiente de exemplo */
+}
+
+/* Navbar transparente */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    background: transparent; /* Navbar transparente */
+    z-index: 10;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Cards container */
+.cards-container {
+    position: absolute;
+    top: 320px; /* Começa 30px antes do final do background */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 5;
+    flex-wrap: wrap; /* Permite quebrar linha se necessário */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    width: 100%;
+}
+
+/* Estilo dos cards */
+.home-card {
+    width: 200px;
+    height: 300px; /* Altura total do card */
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+
+    /* Posicionamento relativo ao fundo */
+    transform: translateY(-20%); /* Move 20% da altura do card para dentro do background */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column; /* Cards em coluna */
+        align-items: center;
+        gap: 15px; /* Espaço reduzido entre os cards */
+        top: 330px; /* Ajusta posição no fundo para telas menores */
+    }
+
+    .home-card {
+        width: 90%; /* Cards ocupam quase toda a largura da tela */
+        height: auto; /* Altura ajustada automaticamente */
+        transform: translateY(0); /* Remove ajuste de sobreposição */
+    }
+}
+
+/* Responsividade para telas muito pequenas (exemplo: 480px) */
+@media (max-width: 480px) {
+    .cards-container {
+        flex-direction: column; /* Alinha os cards em coluna */
+        align-items: center; /* Garante que os cards fiquem centralizados */
+        gap: 15px; /* Espaço reduzido entre os cards */
+        top: 330px; /* Ajusta a posição dos cards */
+        width: 100%; /* Contêiner ocupa toda a largura da tela */
+    }
+
+    .home-card {
+        width: 90%; /* Os cards ocupam 90% da largura disponível */
+        height: auto; /* Altura ajustada automaticamente */
+        transform: translateY(0); /* Remove o deslocamento vertical */
+        margin: 0 auto; /* Garante centralização horizontal */
+    }
+}
