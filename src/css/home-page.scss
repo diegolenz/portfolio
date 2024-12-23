@@ -9,7 +9,9 @@
 .background {
     position: relative;
     height: 350px; /* Altura do background */
-    background: linear-gradient(to bottom, #4facfe, #00f2fe); /* Gradiente de exemplo */
+    //background: linear-gradient(to bottom, #4facfe, #00f2fe); /* Gradiente de exemplo */
+    background: linear-gradient(to top, #2ecc71, #8ecca8); /* Verde no gradiente */
+    margin-bottom: 300px;
 }
 
 /* Navbar transparente */
@@ -39,24 +41,23 @@
     color: white;
 }
 
-/* Cards container */
 .cards-container {
-    position: absolute;
-    top: 320px; /* Começa 30px antes do final do background */
+    position: relative;
+    /* top: 320px; */
+    top: 250px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 20px;
     z-index: 5;
-    flex-wrap: wrap; /* Permite quebrar linha se necessário */
-    justify-content: center; /* Centraliza os cards horizontalmente */
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 }
 
-/* Estilo dos cards */
-.home-card {
+/* .home-card {
     width: 200px;
-    height: 300px; /* Altura total do card */
+    height: 300px; 
     background: white;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
@@ -66,10 +67,8 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
-
-    /* Posicionamento relativo ao fundo */
-    transform: translateY(-20%); /* Move 20% da altura do card para dentro do background */
-}
+    transform: translateY(-20%); 
+}  */
 
 /* Responsividade para telas pequenas */
 @media (max-width: 768px) {
@@ -102,5 +101,170 @@
         height: auto; /* Altura ajustada automaticamente */
         transform: translateY(0); /* Remove o deslocamento vertical */
         margin: 0 auto; /* Garante centralização horizontal */
+    }
+}
+
+.home-card {
+    width: 200px;
+    height: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    overflow: hidden; /* Garante que elementos extras fiquem dentro do card */
+}
+
+.home-card-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #2ecc71;
+}
+
+.home-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.home-card-body {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+    color: #555;
+    max-height: 60px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.home-card-button {
+    /* background: #4facfe;
+    color: white; */
+    background: transparent; /* Fundo transparente */
+    color: black; /* Cor do texto */
+    border: 2px solid black; /* Borda preta */
+    border-radius: 4px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.home-card:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), white);
+}
+
+.home-card:hover .home-card-button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+//section
+.section-content {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+/* Texto da seção */
+.section-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2ecc71; /* Verde sustentabilidade */
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+.section-form {
+    flex: 1;
+    max-width: 400px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-button {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid #2ecc71;
+    color: #2ecc71;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.form-button:hover {
+    background: #2ecc71;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 950px) {
+    .section-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-text,
+    .section-form {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .section-form {
+        margin-top: 20px;
     }
 }

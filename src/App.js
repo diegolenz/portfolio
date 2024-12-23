@@ -20,6 +20,7 @@ class App extends Component {
 
 
           <Home />
+          {/*   <Form /> */}
           {/* <AboutPage /> */}
           {/*  <Form />
             <EconomySection /> */}

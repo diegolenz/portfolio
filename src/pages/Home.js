@@ -20,48 +20,67 @@ class Home extends Component {
 
     render() {
         return (
-            <div class="background">
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="#">Orçamento</a></li>
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Contato</a></li>
-                    </ul>
-                </nav>
-                <div class="cards-container">
-                    {/* <div class="card">Card 1</div>
-                    <div class="card">Card 2</div>
-                    <div class="card">Card 3</div> */}
-                    <div className="home-card" style={{ width: "18rem" }}>
-                        <div className="home-card-header">
-                            <GiReceiveMoney />
-                        </div>
+            <div>
 
-                        <div className="card-body">
-                            <h5 className="card-title">Ecônomia</h5>
-                            <p className="card-text"> Você ecõnomiza e prioriza o que realmente é importante</p>
-                        </div>
-                    </div>
+                <div className="background">
+                    <nav className="navbar">
+                        <ul>
+                            <li><a href="#">Orçamento</a></li>
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Contato</a></li>
+                        </ul>
+                    </nav>
+                    <div className="cards-container">
 
 
-                    <div className="home-card" style={{ width: "18rem" }}>
-                        <div className="card-header">
-                            <BiBarChartAlt />
+                        <div className="home-card" style={{ width: "18rem" }}>
+                            <div className="home-card-icon">  <GiReceiveMoney /></div>
+                            <h3 className="home-card-title">Ecônomia</h3>
+                            <div className="home-card-body">
+                                Você ecõnomiza e prioriza o que realmente é importante
+                            </div>
+                            <button className="home-card-button">Ver Detalhes</button>
                         </div>
-                        <div className="home-card-body">
-                            <h5 className="card-title">sustentável</h5>
-                            <p className="card-text">Energia limpa e renovável</p>
 
+                        <div className="home-card" style={{ width: "18rem" }}>
+                            <div className="home-card-icon">   <BiBarChartAlt /></div>
+                            <h3 className="home-card-title">sustentável</h3>
+                            <div className="home-card-body">
+                                Energia limpa e renovável
+                            </div>
+                            <button className="home-card-button">Ver Detalhes</button>
                         </div>
-                    </div>
-                    <div className="home-card" style={{ width: "18rem" }}>
-                        <div className="home-card-header">
-                            <FaHandshake />
+
+                        <div className="home-card" style={{ width: "18rem" }}>
+                            <div className="home-card-icon">  <FaHandshake /></div>
+                            <h3 className="home-card-title">Confiável</h3>
+                            <div className="home-card-body">
+                                Mais de 3 anos e 2000 clientes satisfeitos
+                            </div>
+                            <button className="home-card-button">Ver Detalhes</button>
                         </div>
-                        <div className="home-card-body">
-                            <h5 className="card-title">Confiável</h5>
-                            <p className="card-text">Mais de 3 anos e 2000 clientes satisfeitos</p>
-                        </div>
+
+
+
+                        <section class="section-content">
+                            <div class="section-text">
+                                <h1 class="section-title">Nosso Compromisso com a Sustentabilidade</h1>
+                                <h2 class="section-subtitle">Pequenas ações, grandes impactos</h2>
+                                <p class="section-description">
+                                    Descubra como estamos fazendo a diferença com práticas que priorizam o meio ambiente. Junte-se a nós nesta jornada em direção a um futuro mais sustentável.
+                                </p>
+                            </div>
+                            <div class="section-form">
+                                <Form />
+                                {/*  <form>
+                                    <label for="name">Nome:</label>
+                                    <input type="text" id="name" name="name" class="form-input" />
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" class="form-input" />
+                                    <button type="submit" class="form-button">Enviar</button>
+                                </form> */}
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>

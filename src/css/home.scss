@@ -205,31 +205,6 @@
     color: white;
 }
 
-.home-card {
-    position: relative; /* Para permitir deslocamento sem sobreposição */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 20%; /* Cada card ocupa 20% da largura */
-    min-width: 200px; /* Tamanho mínimo */
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transform: translateY(-50px); /* Move os cards para fora do contêiner */
-}
-
-.home-card-container {
-    position: relative; /* Base para os cards ficarem relativos ao contêiner */
-    height: 400px; /* Altura do fundo principal */
-    background: rgba(0, 0, 0, 0.1); /* Um fundo claro para destacar os cards */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
 .card-container {
     //display: flex;
     //flex-wrap: wrap; /* Permite os cards quebrarem para novas linhas */
